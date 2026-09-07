@@ -1,0 +1,83 @@
+{
+  "skill": "no-repeat-skill",
+  "purpose": "Routing fixtures for human or model evaluation. This file records expected decisions; it does not run a model or prove routing quality.",
+  "cases": [
+    {
+      "id": "positive-explicit-create",
+      "type": "positive",
+      "query": "把我每周都要重新解释的客户周报流程做成一个 Agent Skill，并验证能不能稳定生成。",
+      "expected": "trigger",
+      "reason": "The user explicitly requests productizing a repeated workflow as a Skill."
+    },
+    {
+      "id": "positive-audit",
+      "type": "positive",
+      "query": "审查这个 SKILL.md 为什么经常误触发，修正边界并加上真实场景测试。",
+      "expected": "trigger",
+      "reason": "The request is to audit and improve Skill routing and behavior."
+    },
+    {
+      "id": "positive-artifact-decision",
+      "type": "positive",
+      "query": "这套图片审核 SOP 值不值得做成 Skill？如果脚本更合适就不要硬做。",
+      "expected": "trigger",
+      "reason": "The user asks for the artifact decision that precedes Skill creation."
+    },
+    {
+      "id": "positive-rework-prompt",
+      "type": "positive",
+      "query": "我有一段每次都粘贴的长提示词，请重构成可安装的能力包，把只在某些情况用到的知识分开。",
+      "expected": "trigger",
+      "reason": "The request is to turn a recurring prompt into an installable Skill."
+    },
+    {
+      "id": "negative-one-off-rewrite",
+      "type": "negative",
+      "query": "把这段话改得简洁一点。",
+      "expected": "no-trigger",
+      "reason": "This is a one-time rewrite with no Skill lifecycle intent."
+    },
+    {
+      "id": "negative-explain",
+      "type": "negative",
+      "query": "Agent Skill 是什么？",
+      "expected": "no-trigger",
+      "reason": "The user asks for an explanation, not creation or evaluation."
+    },
+    {
+      "id": "negative-fact",
+      "type": "negative",
+      "query": "YAML 的文件扩展名有哪些？",
+      "expected": "no-trigger",
+      "reason": "This is a simple factual query."
+    },
+    {
+      "id": "near-neighbor-automation",
+      "type": "near-neighbor",
+      "query": "每周一上午九点自动提醒我提交周报。",
+      "expected": "other-capability",
+      "reason": "The core need is scheduling an automation, not designing a Skill."
+    },
+    {
+      "id": "near-neighbor-project-rules",
+      "type": "near-neighbor",
+      "query": "在这个仓库里要求所有测试都使用 pytest，帮我写进项目规则。",
+      "expected": "other-capability",
+      "reason": "This is a repository-local rule and should be implemented directly."
+    },
+    {
+      "id": "near-neighbor-business-decision",
+      "type": "near-neighbor",
+      "query": "我们要不要把服务从免费改为订阅制？请用第一性原理分析。",
+      "expected": "other-capability",
+      "reason": "This is a first-principles business decision, not Skill productization."
+    },
+    {
+      "id": "near-neighbor-script",
+      "type": "near-neighbor",
+      "query": "写个脚本把所有 CSV 的日期列统一成 ISO 8601。",
+      "expected": "other-capability",
+      "reason": "The transformation is deterministic and the user directly requests a script."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "No Repeat Skill",
+  "version": "1.0.0",
+  "description": "A first-principles workflow for deciding whether repeated work should become an Agent Skill, choosing the smallest sufficient artifact, designing precise activation boundaries, building only behavior-changing resources, and validating structure, routing, execution, safety, and release readiness without overstating evidence.",
+  "repository": "https://github.com/GodAI-Master/GodSkill",
+  "tags": [
+    "agent-skills",
+    "workflow-productization",
+    "first-principles",
+    "skill-design",
+    "evaluation",
+    "quality-assurance"
+  ]
+}

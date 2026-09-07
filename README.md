@@ -5,12 +5,35 @@
 </p>
 
 <h1 align="center">&#9878; GodSkill</h1>
-<h3 align="center">第一性原理引导决策 &middot; First Principles Decision Engine</h3>
+<h3 align="center">第一性原理决策与可复用 Agent Skill 工具集</h3>
 
 <p align="center">
-  <strong>不做迎合者，做你的反方辩手和认知外挂</strong><br>
-  在每一次重大决策前，用第一性原理审视你的假设、填补信息差、寻找更优路径
+  <strong>让 Agent 在重要决策前先想清楚，在重复工作中不再从头开始</strong><br>
+  先用第一性原理审查目标与假设，再把稳定有效的方法沉淀为可验证的能力
 </p>
+
+---
+
+## Skills 一览
+
+### `first-principles-decision`
+
+用于购买、技术选型、产品设计、工作流、学习路线、商业策略、成本和风险比较等复杂决策。它会分离真实目标与用户已提方案，检查隐藏假设，搜索会影响结论的最新信息，比较替代路径，再给出明确可执行的建议。
+
+### `no-repeat-skill`
+
+用于将重复工作流、SOP、长提示词、团队经验、专家方法和现有 Agent Skill，转化为精简、可安装、可执行、可验证和可迭代的能力包。它不会一上来就创建大量文件，而是先用第一性原理重定义真实目标，检查“这件事必须做成 Skill”的假设，然后在一次性回答、文档、项目规则、记忆、模板、脚本、自动化和 Skill 之间选择成本最低且足以解决问题的载体。
+
+只有当任务确实会复用、存在稳定的误判或重复解释成本、需要 Agent 根据语境做出判断，并且结果能够被检查时，它才会建议建立 Skill。进入构建后，它会定义应触发、不应触发和容易混淆的近邻场景；设计详细但有区分度的简介；把通用决策留在入口，把条件性知识、确定性脚本和产物模板按需分开；最后用结构、路由、端到端行为、安全和回归检查来验收。
+
+该 Skill 还专门区分“文件格式没有错”和“Agent 真的会做对”这两种完全不同的证据，避免把 JSON 通过、关键词命中或自评报告误当成真实能力验证。对于公开发布或复刻第三方能力的场景，它会额外检查许可、归属、隐私、密钥、外部依赖和发布副作用，防止通过简单替换名称来规避原始许可条件。
+
+适合的请求包括：
+
+- “把我每周都要重复解释的流程做成 Skill。”
+- “审查这个 Skill 为什么经常误触发，并直接修好。”
+- “这套 SOP 到底应该做成 Skill、脚本还是项目规则？”
+- “把这段长提示词重构为能在多个 Agent 环境中分发的能力包。”
 
 ---
 
@@ -81,16 +104,18 @@
 
 ### 方式一：手动安装
 
-1. 下载本仓库的 `SKILL.md`
-2. 在 `~/.codebuddy/skills/` 下创建文件夹 `first-principles-decision/`
-3. 将 `SKILL.md` 放入该文件夹
-4. 重启 CodeBuddy 或刷新技能列表
+1. 下载本仓库。
+2. 选择 `first-principles-decision/` 或 `no-repeat-skill/`。
+3. 将整个 Skill 目录复制到目标 Agent 的 skills 目录；不要只复制 `SKILL.md`，否则关联资源会丢失。
+4. 按目标 Agent 的要求刷新或重启。
 
 ### 方式二：克隆到 skills 目录
 
 ```bash
-git clone https://github.com/HonglinXie/GodSkill.git ~/.codebuddy/skills/first-principles-decision/
+git clone https://github.com/GodAI-Master/GodSkill.git
 ```
+
+然后将所需的 Skill 子目录复制到目标 Agent 的 skills 目录。
 
 ---
 
@@ -148,10 +173,17 @@ GodSkill 强调六项核心原则：
 GodSkill/
 ├── README.md                          # 本文件
 ├── .gitignore                         # Git 忽略规则
-└── first-principles-decision/         # 第一性原理引导决策 Skill
-    ├── SKILL.md                       # 核心 Skill 定义文件（完整 7 步框架）
+├── first-principles-decision/         # 第一性原理引导决策 Skill
+│   ├── SKILL.md                       # 核心 Skill 定义文件（完整 7 步框架）
+│   └── _skillhub_meta.json            # Skill 元数据
+└── no-repeat-skill/                   # 重复流程的 Skill 化、审查和验证
+    ├── SKILL.md                       # 入口、核心决策与资源导航
+    ├── references/                    # 按需读取的决策、设计、测试和发布指南
+    ├── assets/templates/              # 调研、行为测试和审查报告模板
+    ├── evals/                         # 路由语料
+    ├── scripts/                       # 静态验证器
+    ├── agents/openai.yaml             # Codex 界面元数据
     └── _skillhub_meta.json            # Skill 元数据
-<!-- 更多 Skill 将在后续添加 -->
 ```
 
 ---

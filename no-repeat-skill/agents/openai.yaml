@@ -1,0 +1,4 @@
+interface:
+  display_name: "No Repeat Skill"
+  short_description: "把重复流程转化为精简、可验证、可迭代的 Agent Skill"
+  default_prompt: "Use $no-repeat-skill to turn this repeated workflow into the smallest reusable and verified Agent Skill."
