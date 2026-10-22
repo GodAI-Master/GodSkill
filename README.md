@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | `first-principles-decision` | 在购买、技术选型、产品设计、商业策略等复杂决策前，检查真实目标、隐藏假设、信息差和替代方案。 | [查看独立 README](first-principles-decision/README.md) |
 | `no-repeat-skill` | 判断重复工作是否值得做成 Skill，并创建、重构、审查和验证可复用的 Agent Skill。 | [查看独立 README](no-repeat-skill/README.md) |
+| `wechat-miniprogram-seo` | 为微信小程序规划、实现和检查有真实内容价值的公开搜索落地页。 | [查看独立 README](wechat-miniprogram-seo/README.md) |
 
 ## 目录
 
@@ -18,7 +19,7 @@ GodSkill/
 │   ├── README.md
 │   ├── SKILL.md
 │   └── _skillhub_meta.json
-└── no-repeat-skill/
+├── no-repeat-skill/
     ├── README.md
     ├── SKILL.md
     ├── references/
@@ -26,6 +27,12 @@ GodSkill/
     ├── evals/
     ├── scripts/
     ├── agents/
+    └── _skillhub_meta.json
+└── wechat-miniprogram-seo/
+    ├── README.md
+    ├── SKILL.md
+    ├── agents/
+    ├── references/
     └── _skillhub_meta.json
 ```
 

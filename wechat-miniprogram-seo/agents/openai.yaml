@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信小程序 SEO"
+  short_description: "在小程序开发中规划、实现并检查可被微信搜索发现的公开页面"
+  default_prompt: "使用 $wechat-mini-program-seo 检查这个微信小程序的公开搜索页面、直达访问、内链和 sitemap，并明确本地验证与微信实际收录之间的边界。"

@@ -4,3 +4,9 @@
 # OS
 .DS_Store
 Thumbs.db
+
+# Local configuration and generated files
+*.log
+.env
+.env.*
+node_modules/
