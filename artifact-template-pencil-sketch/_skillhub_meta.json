@@ -1,0 +1,13 @@
+{
+  "name": "Pencil Sketch 日漫素描手稿",
+  "version": "1.0.0",
+  "description": "Turn a user-provided image into a Japanese manga-inspired graphite pencil sketch, using the supplied reference for style while preserving the original composition as closely as possible.",
+  "repository": "https://github.com/GodAI-Master/GodSkill",
+  "tags": [
+    "image-generation",
+    "image-editing",
+    "pencil-sketch",
+    "manga",
+    "illustration"
+  ]
+}

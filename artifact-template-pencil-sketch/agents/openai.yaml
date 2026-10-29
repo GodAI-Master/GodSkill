@@ -1,0 +1,8 @@
+interface:
+  display_name: "Pencil Sketch 日漫素描手稿"
+  short_description: "Create images with the Pencil Sketch 日漫素描手稿 template"
+  icon_small: "./assets/preview.png"
+  icon_large: "./assets/preview.png"
+  default_prompt: "Create an image using the Pencil Sketch 日漫素描手稿 template."
+policy:
+  allow_implicit_invocation: true
