@@ -19,7 +19,7 @@ GodSkill 是一组可独立安装的 Agent Skills。它把判断方法、工作�
 > 复杂问题看不清、同样工作反复解释、好内容难被发现——GodSkill 给 Agent 的不是一段“万能提示词”，而是一套能反复执行、按需读取并明确验证边界的方法。
 
 ```text
-复杂问题看不清     同样工作反复解释     好内容难被发现     原图变素描
+复杂问题看不清     同样工作反复解释     好内容难被发现     成品图展开绘制过程
        ↓                   ↓                   ↓                  ↓
 First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
 找到真正目标          沉淀可复用能力        建立可发现页面      转换手绘风格
@@ -32,7 +32,7 @@ First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
 | 在几个方案间犹豫，担心一开始就选错方向 | [`first-principles-decision`](first-principles-decision/README.md) | 拆开真实目标、隐藏假设、信息差和替代路径，给出明确建议 |
 | 每周重复解释同一套流程，想把经验交给 Agent | [`no-repeat-skill`](no-repeat-skill/README.md) | 判断应该做成 Skill、脚本还是模板，并完成最小实现与验证 |
 | 为微信小程序建设公开搜索页，又不想堆砌关键词 | [`wechat-miniprogram-seo`](wechat-miniprogram-seo/README.md) | 规划真实内容、稳定页面、公开内链和 sitemap，并守住收录证据边界 |
-| 想把已有图片转成日漫铅笔素描 | [`artifact-template-pencil-sketch`](artifact-template-pencil-sketch/README.md) | 参考原图的人物与构图，生成带铅笔线条和纸张质感的素描 |
+| 想从一张成品图得到日漫素描的分阶段稿件 | [`artifact-template-pencil-sketch`](artifact-template-pencil-sketch/README.md) | 生成轮廓稿、中间效果稿和手绘成品稿三张独立图片 |
 
 选择一个真实问题，安装对应 Skill，然后直接把任务交给 Agent。每个 Skill 都有自己的目录、说明文件和安装方式，不需要一次安装全部内容。
 
@@ -140,21 +140,21 @@ First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
 </details>
 
 <details>
-<summary><strong>✏️ artifact-template-pencil-sketch：把原图转为日漫铅笔素描</strong></summary>
+<summary><strong>✏️ artifact-template-pencil-sketch：从成品图生成三阶段素描稿</strong></summary>
 
-### 示例 7：将动漫图片转成素描
+### 示例 7：从成品图生成三阶段素描稿
 
 **你原本会说：**
 
-> 使用这张原图，生成保留人物和构图的日漫铅笔素描。
+> 根据这张成品图，生成轮廓稿、中间效果稿和完成稿三张独立图片，保持人物和构图一致。
 
 **Skill 会怎么处理：**
 
-以你提供的图片为参考，保留画面的主要人物、表情和布局，并用铅笔线条、明暗和纸张质感呈现。
+保留成品图中的人物、表情和布局，分别生成以结构线为主的轮廓稿、加入部分排线和阴影的中间稿，以及细节完整的素描成品稿。
 
 **你会得到：**
 
-一张基于原图生成的素描效果图。实际效果取决于原图和使用的图像生成工具，可在技能说明中查看原图与结果示例。
+三张分别交付的阶段图片。实际效果取决于原图和使用的图像生成工具；阶段图是根据成品图生成的示意稿，不是对真实绘画过程的记录。
 
 </details>
 
@@ -212,7 +212,7 @@ artifact-template-pencil-sketch
 ```
 
 ```text
-使用 $artifact-template-pencil-sketch，将我提供的图片转成日漫铅笔素描，保留人物和构图。
+使用 $artifact-template-pencil-sketch，根据我提供的成品图生成轮廓稿、中间效果稿和手绘成品稿三张独立图片，保持人物和构图一致。
 ```
 
 如果客户端没有自动刷新 Skill 列表，请重新打开 Codex。更详细的安装、边界和示例请阅读对应目录中的独立 README。

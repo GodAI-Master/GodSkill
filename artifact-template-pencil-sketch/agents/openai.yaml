@@ -1,8 +1,8 @@
 interface:
-  display_name: "Pencil Sketch 日漫素描手稿"
-  short_description: "Create images with the Pencil Sketch 日漫素描手稿 template"
+  display_name: "Pencil Sketch 多阶段素描手稿"
+  short_description: "从成品图生成轮廓、中间和完成素描图"
   icon_small: "./assets/preview.png"
   icon_large: "./assets/preview.png"
-  default_prompt: "Create an image using the Pencil Sketch 日漫素描手稿 template."
+  default_prompt: "使用 Pencil Sketch 日漫素描手稿，根据这张成品图分别生成手绘轮廓稿、中间效果稿和完成的素描成品稿，三张图片保持人物与构图一致。"
 policy:
   allow_implicit_invocation: true
