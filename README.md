@@ -9,7 +9,7 @@
 GodSkill 是一组可独立安装的 Agent Skills。它把判断方法、工作流程和验收边界封装成可复用能力，让 Agent 不只是“这次答对”，而是在下一次遇到同类问题时，依然知道该如何思考、执行和检查。
 
 <p>
-  <img alt="Skills: 4" src="https://img.shields.io/badge/Skills-4-7C3AED?style=for-the-badge">
+  <img alt="Skills: 5" src="https://img.shields.io/badge/Skills-5-7C3AED?style=for-the-badge">
   <img alt="Install independently" src="https://img.shields.io/badge/Install-Independent-0284C7?style=for-the-badge">
   <img alt="Chinese documentation" src="https://img.shields.io/badge/Docs-Chinese-059669?style=for-the-badge">
 </p>
@@ -33,10 +33,11 @@ First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
 | 每周重复解释同一套流程，想把经验交给 Agent | [`no-repeat-skill`](no-repeat-skill/README.md) | 判断应该做成 Skill、脚本还是模板，并完成最小实现与验证 |
 | 为微信小程序建设公开搜索页，又不想堆砌关键词 | [`wechat-miniprogram-seo`](wechat-miniprogram-seo/README.md) | 规划真实内容、稳定页面、公开内链和 sitemap，并守住收录证据边界 |
 | 想从一张成品图得到日漫素描的分阶段稿件 | [`artifact-template-pencil-sketch`](artifact-template-pencil-sketch/README.md) | 生成轮廓稿、中间效果稿和手绘成品稿三张独立图片 |
+| 想做万圣节主题写真、换装海报或创意图片 | [`sweet-corn-halloween`](sweet-corn-halloween/README.md) | 从 7 种风格中选择，再依据上传图片制作写真或主题图 |
 
 选择一个真实问题，安装对应 Skill，然后直接把任务交给 Agent。每个 Skill 都有自己的目录、说明文件和安装方式，不需要一次安装全部内容。
 
-## 它们怎样工作：7 个示例任务
+## 它们怎样工作：8 个示例任务
 
 以下都是能力示例，用来展示各 Skill 的处理方式和预期输出，不代表虚构的客户成绩或平台结果。
 
@@ -158,6 +159,25 @@ First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
 
 </details>
 
+<details>
+<summary><strong>🎃 sweet-corn-halloween：先选风格，再做万圣节主题图</strong></summary>
+
+### 示例 8：为上传的照片制作万圣节写真
+
+**你原本会说：**
+
+> 我上传了一张照片，想做一组可爱又有节日感的万圣节写真。
+
+**Skill 会怎么处理：**
+
+先展示七种风格及对应的画幅、图片数量，等待你选择；选定后读取该风格的完整提示词，保留照片中的主体特征，并按对应方式生成。
+
+**你会得到：**
+
+符合所选风格和张数的照片、海报或创意图片。多张系列会逐张交付；动物维持真实动物形态。实际效果取决于原图和可用的图像工具。
+
+</details>
+
 ## 60 秒开始使用
 
 ### 1. 克隆仓库
@@ -193,6 +213,7 @@ first-principles-decision
 no-repeat-skill
 wechat-miniprogram-seo
 artifact-template-pencil-sketch
+sweet-corn-halloween
 ```
 
 请复制完整子目录，不要只复制 `SKILL.md`；否则参考资料、模板、检查脚本或界面信息可能丢失。若使用自定义 `CODEX_HOME`，将目标路径改为该目录下的 `skills/<skill-name>`。
@@ -215,6 +236,10 @@ artifact-template-pencil-sketch
 使用 $artifact-template-pencil-sketch，根据我提供的成品图生成轮廓稿、中间效果稿和手绘成品稿三张独立图片，保持人物和构图一致。
 ```
 
+```text
+使用 $sweet-corn-halloween。我上传了一张照片，想做万圣节写真；先展示七种风格让我选择。
+```
+
 如果客户端没有自动刷新 Skill 列表，请重新打开 Codex。更详细的安装、边界和示例请阅读对应目录中的独立 README。
 
 ## GodSkill 的设计原则
@@ -234,6 +259,12 @@ GodSkill/
 │   ├── README.md
 │   ├── SKILL.md
 │   └── …
+├── sweet-corn-halloween/
+│   ├── README.md
+│   ├── SKILL.md
+│   ├── agents/
+│   ├── references/
+│   └── _skillhub_meta.json
 ├── first-principles-decision/
 │   ├── README.md
 │   ├── SKILL.md

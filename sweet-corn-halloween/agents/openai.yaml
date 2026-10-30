@@ -1,0 +1,6 @@
+interface:
+  display_name: "甜玉米万圣节写真"
+  short_description: "七种万圣节写真与创意图像风格"
+  default_prompt: "我上传了一张图片，想做万圣节主题创意图。请先展示七种风格供我选择，再按我选的风格生成。"
+policy:
+  allow_implicit_invocation: true
