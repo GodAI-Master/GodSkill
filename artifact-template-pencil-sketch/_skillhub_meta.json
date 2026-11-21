@@ -2,6 +2,7 @@
   "name": "Pencil Sketch 日漫素描手稿",
   "version": "1.0.0",
   "description": "Create a consistent manga pencil-sketch sequence from a finished image: outline draft, intermediate shading draft, and finished sketch.",
+  "author": "GodAI-Master",
   "repository": "https://github.com/GodAI-Master/GodSkill",
   "tags": [
     "image-generation",

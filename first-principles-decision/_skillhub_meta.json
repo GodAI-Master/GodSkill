@@ -2,7 +2,7 @@
   "name": "GodSkill — 第一性原理引导决策",
   "version": "1.0.0",
   "description": "First-principles decision engine for CodeBuddy. Systematically challenges assumptions, fills information gaps, and discovers optimal paths before any complex decision.",
-  "author": "HonglinXie",
-  "repository": "https://github.com/HonglinXie/GodSkill",
+  "author": "GodAI-Master",
+  "repository": "https://github.com/GodAI-Master/GodSkill",
   "tags": ["decision-making", "first-principles", "critical-thinking", "strategy", "productivity"]
 }
