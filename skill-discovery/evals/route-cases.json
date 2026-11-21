@@ -1,0 +1,91 @@
+{
+  "skill": "skill-discovery",
+  "version": "1.0.0",
+  "notes": "路由用例只描述期望的触发行为，不代表已通过真实客户端验证。",
+  "cases": [
+    {
+      "id": "pos-01",
+      "type": "positive",
+      "query": "帮我找几个处理 Excel 并且能图表展示的技能，列出来源，先不要安装",
+      "expected": "trigger",
+      "reason": "同时包含寻找技能、能力限定与不安装约束，是本技能的典型输入"
+    },
+    {
+      "id": "pos-02",
+      "type": "positive",
+      "query": "有没有做小红书封面图的技能，顺便说下哪个下载量高",
+      "expected": "trigger",
+      "reason": "以自然语言描述场景并要求选型依据，属于发现类需求"
+    },
+    {
+      "id": "pos-03",
+      "type": "positive",
+      "query": "find skills for pdf table extraction and tell me which one is maintained",
+      "expected": "trigger",
+      "reason": "英文同义表达，显式要求比较维护状态"
+    },
+    {
+      "id": "pos-04",
+      "type": "positive",
+      "query": "这个需求不知道用什么工具做，帮我看看有哪些现成能力",
+      "expected": "trigger",
+      "reason": "工具未知且需要能力发现，即使未出现技能二字也应触发"
+    },
+    {
+      "id": "pos-05",
+      "type": "positive",
+      "query": "把刚才那几个候选技能里最靠谱的一个装上",
+      "expected": "trigger",
+      "reason": "延续上一轮发现结果并进入安装门禁，属于本技能的第二步"
+    },
+    {
+      "id": "neg-01",
+      "type": "negative",
+      "query": "把这段中文翻译成英文",
+      "expected": "no-trigger",
+      "reason": "单次执行任务，不涉及能力发现"
+    },
+    {
+      "id": "neg-02",
+      "type": "negative",
+      "query": "这个函数为什么返回 undefined",
+      "expected": "no-trigger",
+      "reason": "具体技术问题排查，与技能选型无关"
+    },
+    {
+      "id": "neg-03",
+      "type": "negative",
+      "query": "帮我把这份 Excel 里的重复行删掉",
+      "expected": "no-trigger",
+      "reason": "用户已给出明确任务，直接执行表格处理即可，不需要发现环节"
+    },
+    {
+      "id": "near-01",
+      "type": "near-neighbor",
+      "query": "我这个每周都要重复解释的流程，想做成一个 Skill",
+      "expected": "other-capability",
+      "reason": "指向新建能力包，应交给 no-repeat-skill，本技能只负责发现"
+    },
+    {
+      "id": "near-02",
+      "type": "near-neighbor",
+      "query": "帮我审查这个 Skill 的触发描述写得对不对",
+      "expected": "other-capability",
+      "reason": "属于 Skill 质量审查与重构，不涉及跨市场检索"
+    },
+    {
+      "id": "near-03",
+      "type": "near-neighbor",
+      "query": "用 workbuddy-sheetagent 把这张表做成图表",
+      "expected": "other-capability",
+      "reason": "用户已点名具体技能，直接加载执行，无需检索"
+    },
+    {
+      "id": "near-04",
+      "type": "near-neighbor",
+      "query": "帮我设计一套评测这套技能好用程度的评分标准",
+      "expected": "other-capability",
+      "reason": "这是评测框架设计，选型发现只提供候选与证据，不承担评测设计"
+    }
+  ]
+}

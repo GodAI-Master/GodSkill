@@ -9,7 +9,7 @@
 GodSkill 是一组可独立安装的 Agent Skills。它把判断方法、工作流程和验收边界封装成可复用能力，让 Agent 不只是“这次答对”，而是在下一次遇到同类问题时，依然知道该如何思考、执行和检查。
 
 <p>
-  <img alt="Skills: 5" src="https://img.shields.io/badge/Skills-5-7C3AED?style=for-the-badge">
+  <img alt="Skills: 6" src="https://img.shields.io/badge/Skills-6-7C3AED?style=for-the-badge">
   <img alt="Install independently" src="https://img.shields.io/badge/Install-Independent-0284C7?style=for-the-badge">
   <img alt="Chinese documentation" src="https://img.shields.io/badge/Docs-Chinese-059669?style=for-the-badge">
 </p>
@@ -19,16 +19,17 @@ GodSkill 是一组可独立安装的 Agent Skills。它把判断方法、工作�
 > 复杂问题看不清、同样工作反复解释、好内容难被发现——GodSkill 给 Agent 的不是一段“万能提示词”，而是一套能反复执行、按需读取并明确验证边界的方法。
 
 ```text
-复杂问题看不清     同样工作反复解释     好内容难被发现     成品图展开绘制过程
-       ↓                   ↓                   ↓                  ↓
-First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
-找到真正目标          沉淀可复用能力        建立可发现页面      转换手绘风格
+不知道该用什么     复杂问题看不清     同样工作反复解释     好内容难被发现     成品图展开绘制过程
+       ↓                   ↓                   ↓                  ↓                  ↓
+ Skill Discovery    First Principles     No Repeat Skill       WeChat SEO       Pencil Sketch
+六层可审计检索        找到真正目标          沉淀可复用能力        建立可发现页面      转换手绘风格
 ```
 
 ## 30 秒找到适合你的 Skill
 
 | 如果你正在…… | 从这里开始 | 它会帮你…… |
 | --- | --- | --- |
+| 手里有个需求，但不知道该用哪个技能，又不想被"热门榜"带偏 | [`skill-discovery`](skill-discovery/README.md) | 跑完六层检索，给出带来源、带能力证据、带覆盖缺口的候选清单 |
 | 在几个方案间犹豫，担心一开始就选错方向 | [`first-principles-decision`](first-principles-decision/README.md) | 拆开真实目标、隐藏假设、信息差和替代路径，给出明确建议 |
 | 每周重复解释同一套流程，想把经验交给 Agent | [`no-repeat-skill`](no-repeat-skill/README.md) | 判断应该做成 Skill、脚本还是模板，并完成最小实现与验证 |
 | 为微信小程序建设公开搜索页，又不想堆砌关键词 | [`wechat-miniprogram-seo`](wechat-miniprogram-seo/README.md) | 规划真实内容、稳定页面、公开内链和 sitemap，并守住收录证据边界 |
@@ -37,7 +38,7 @@ First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
 
 选择一个真实问题，安装对应 Skill，然后直接把任务交给 Agent。每个 Skill 都有自己的目录、说明文件和安装方式，不需要一次安装全部内容。
 
-## 它们怎样工作：8 个示例任务
+## 它们怎样工作：10 个示例任务
 
 以下都是能力示例，用来展示各 Skill 的处理方式和预期输出，不代表虚构的客户成绩或平台结果。
 
@@ -178,6 +179,39 @@ First Principles     No Repeat Skill        WeChat SEO       Pencil Sketch
 
 </details>
 
+<details>
+<summary><strong>🔎 skill-discovery：先证明检索跑全了，再谈推荐</strong></summary>
+
+### 示例 9：想找能出图的 Excel 技能，却拿到一份注水清单
+
+**你原本会说：**
+
+> 帮我找几个处理 Excel 并且能图表展示的技能，列出来源。
+
+**Skill 会怎么处理：**
+
+先拆出中英关键词组，扫本地内置与已装两层，再并发检索 SkillHub、虾评、ClawHub 与 GitHub；把聚合市场与上游仓库的同源条目合并，避免同一个技能被重复计数；对每条候选标注能力证据来自描述还是正文。
+
+**你会得到：**
+
+六层覆盖矩阵、带来源与口径的热度、分档推荐和缺口声明。如果某一层没跑或接口失败，会直接写出来，并说明因此可能漏掉什么，而不是含糊地说"已全面检索"。
+
+### 示例 10：装了三个同类技能，不知道留哪个
+
+**你原本会说：**
+
+> 我装了好几个做表格的技能，到底留哪个？
+
+**Skill 会怎么处理：**
+
+用本地层扫描脚本读出每个技能的 frontmatter，按名称去重、按版本排序，识别哪些其实是同一能力的镜像；再看每个技能声明的交付物是否覆盖你的真实约束，例如是否需要在 Excel 内嵌可编辑图表、是否需要本地处理。
+
+**你会得到：**
+
+一份本地能力盘点，标明哪些是重复安装、哪些是不同定位，以及零安装成本下的首选顺序。
+
+</details>
+
 ## 60 秒开始使用
 
 ### 1. 克隆仓库
@@ -209,6 +243,7 @@ cp -R "$skill_name"/. "$HOME/.codex/skills/$skill_name"/
 把技能名替换为下面任意一个：
 
 ```text
+skill-discovery
 first-principles-decision
 no-repeat-skill
 wechat-miniprogram-seo
@@ -219,6 +254,10 @@ sweet-corn-halloween
 请复制完整子目录，不要只复制 `SKILL.md`；否则参考资料、模板、检查脚本或界面信息可能丢失。若使用自定义 `CODEX_HOME`，将目标路径改为该目录下的 `skills/<skill-name>`。
 
 ### 3. 直接调用
+
+```text
+使用 $skill-discovery，帮我找能处理 Excel 并输出图表的技能，标明来源和覆盖缺口，先不要安装。
+```
 
 ```text
 使用 $first-principles-decision 分析：我们是否应该把现有系统拆成微服务？
@@ -248,6 +287,7 @@ sweet-corn-halloween
 - **先解决真实问题**：不为了看起来完整而堆文件、模板和流程。
 - **方法与资料分层**：核心入口保持精简，详细规范和工具按需读取。
 - **验证不夸大**：结构检查、真实行为和外部平台结果分别说明。
+- **检索要可审计**：说跑了几层就写几层，未执行与零命中都要显式标出，不用"全面覆盖"这类无法验证的词。
 - **保留用户选择**：Skill 帮助 Agent 做出更好的判断，不替用户扩大任务范围。
 
 ## 仓库结构
@@ -255,6 +295,13 @@ sweet-corn-halloween
 ```text
 GodSkill/
 ├── README.md
+├── skill-discovery/
+│   ├── README.md
+│   ├── SKILL.md
+│   ├── evals/
+│   ├── references/
+│   ├── scripts/
+│   └── _skillhub_meta.json
 ├── artifact-template-pencil-sketch/
 │   ├── README.md
 │   ├── SKILL.md
@@ -303,6 +350,8 @@ python3 no-repeat-skill/scripts/validate_skill.py no-repeat-skill --strict
 ```
 
 静态检查通过，只能证明基础结构和文件关系没有发现问题，不能自动证明 Agent 在所有真实任务中都会正确触发，也不能替代外部平台验收。特别是微信小程序的 sitemap、页面结构和本地检查通过，不代表微信已经抓取、收录、展示或提升排名。
+
+`skill-discovery/scripts/scan_local_layers.py` 是同一原则的另一个例子：它能证明本地两层的目录结构与 frontmatter 可解析、同名技能可正确去重，但不能证明远程四层实时可达，也不代表推荐排序在真实任务中有效。
 
 ## 许可
 
