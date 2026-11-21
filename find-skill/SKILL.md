@@ -1,10 +1,10 @@
 ---
-name: skill-discovery
+name: find-skill
 description: 六层可审计的技能发现与选型引擎。当用户说找技能、装技能、有没有做某事的技能、技能推荐、find skills、skill discovery、install skill，或用自然语言描述一个不知道用什么工具完成的场景时使用。按官方内置、本地已安装、SkillHub、虾评、ClawHub、GitHub 六层顺序检索，先本地后远程，同源去重后按能力匹配、可信证据、采用度、维护活跃四维排序，输出六层覆盖矩阵与带来源的候选清单。默认只推荐不安装，安装需用户显式确认。未执行或失败的层必须显式声明，禁止用六层检索的说法掩盖部分执行。不用于单次事实查询，不用于新建或重构 Skill，不用于已经明确知道该用哪个技能的场景。
 license: MIT
 ---
 
-# Skill Discovery
+# Find Skill
 
 把一个模糊需求，变成一份**可追溯、可复核、可复现**的技能选型结论。
 

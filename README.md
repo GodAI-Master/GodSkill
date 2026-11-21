@@ -21,7 +21,7 @@ GodSkill 是一组可独立安装的 Agent Skills。它把判断方法、工作�
 ```text
 不知道该用什么     复杂问题看不清     同样工作反复解释     好内容难被发现     成品图展开绘制过程
        ↓                   ↓                   ↓                  ↓                  ↓
- Skill Discovery    First Principles     No Repeat Skill       WeChat SEO       Pencil Sketch
+     find-skill       First Principles     No Repeat Skill       WeChat SEO       Pencil Sketch
 六层可审计检索        找到真正目标          沉淀可复用能力        建立可发现页面      转换手绘风格
 ```
 
@@ -29,7 +29,7 @@ GodSkill 是一组可独立安装的 Agent Skills。它把判断方法、工作�
 
 | 如果你正在…… | 从这里开始 | 它会帮你…… |
 | --- | --- | --- |
-| 手里有个需求，但不知道该用哪个技能，又不想被"热门榜"带偏 | [`skill-discovery`](skill-discovery/README.md) | 跑完六层检索，给出带来源、带能力证据、带覆盖缺口的候选清单 |
+| 手里有个需求，但不知道该用哪个技能，又不想被"热门榜"带偏 | [`find-skill`](find-skill/README.md) | 跑完六层检索，给出带来源、带能力证据、带覆盖缺口的候选清单 |
 | 在几个方案间犹豫，担心一开始就选错方向 | [`first-principles-decision`](first-principles-decision/README.md) | 拆开真实目标、隐藏假设、信息差和替代路径，给出明确建议 |
 | 每周重复解释同一套流程，想把经验交给 Agent | [`no-repeat-skill`](no-repeat-skill/README.md) | 判断应该做成 Skill、脚本还是模板，并完成最小实现与验证 |
 | 为微信小程序建设公开搜索页，又不想堆砌关键词 | [`wechat-miniprogram-seo`](wechat-miniprogram-seo/README.md) | 规划真实内容、稳定页面、公开内链和 sitemap，并守住收录证据边界 |
@@ -180,7 +180,7 @@ GodSkill 是一组可独立安装的 Agent Skills。它把判断方法、工作�
 </details>
 
 <details>
-<summary><strong>🔎 skill-discovery：先证明检索跑全了，再谈推荐</strong></summary>
+<summary><strong>🔎 find-skill：先证明检索跑全了，再谈推荐</strong></summary>
 
 ### 示例 9：想找能出图的 Excel 技能，却拿到一份注水清单
 
@@ -243,7 +243,7 @@ cp -R "$skill_name"/. "$HOME/.codex/skills/$skill_name"/
 把技能名替换为下面任意一个：
 
 ```text
-skill-discovery
+find-skill
 first-principles-decision
 no-repeat-skill
 wechat-miniprogram-seo
@@ -256,7 +256,7 @@ sweet-corn-halloween
 ### 3. 直接调用
 
 ```text
-使用 $skill-discovery，帮我找能处理 Excel 并输出图表的技能，标明来源和覆盖缺口，先不要安装。
+使用 $find-skill，帮我找能处理 Excel 并输出图表的技能，标明来源和覆盖缺口，先不要安装。
 ```
 
 ```text
@@ -295,7 +295,7 @@ sweet-corn-halloween
 ```text
 GodSkill/
 ├── README.md
-├── skill-discovery/
+├── find-skill/
 │   ├── README.md
 │   ├── SKILL.md
 │   ├── evals/
@@ -351,7 +351,7 @@ python3 no-repeat-skill/scripts/validate_skill.py no-repeat-skill --strict
 
 静态检查通过，只能证明基础结构和文件关系没有发现问题，不能自动证明 Agent 在所有真实任务中都会正确触发，也不能替代外部平台验收。特别是微信小程序的 sitemap、页面结构和本地检查通过，不代表微信已经抓取、收录、展示或提升排名。
 
-`skill-discovery/scripts/scan_local_layers.py` 是同一原则的另一个例子：它能证明本地两层的目录结构与 frontmatter 可解析、同名技能可正确去重，但不能证明远程四层实时可达，也不代表推荐排序在真实任务中有效。
+`find-skill/scripts/scan_local_layers.py` 是同一原则的另一个例子：它能证明本地两层的目录结构与 frontmatter 可解析、同名技能可正确去重，但不能证明远程四层实时可达，也不代表推荐排序在真实任务中有效。
 
 ## 许可
 

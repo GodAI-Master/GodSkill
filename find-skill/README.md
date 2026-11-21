@@ -1,8 +1,8 @@
-# Skill Discovery
+# Find Skill
 
 **把"帮我找个技能"变成一份能被别人复核的检索记录。**
 
-`skill-discovery` 是一个六层可审计的技能发现与选型引擎。它不只是搜到几个名字，而是明确回答三件事：每一层跑没跑、每一条来源能不能点开、每一句能力判断有没有原文依据。
+`find-skill` 是一个六层可审计的技能发现与选型引擎。它不只是搜到几个名字，而是明确回答三件事：每一层跑没跑、每一条来源能不能点开、每一句能力判断有没有原文依据。
 
 ## 它解决什么问题
 
@@ -13,7 +13,7 @@
 - **同源重复计数**：聚合市场对上游做了联邦索引，同一个技能被当成两个候选，热度被叠加。
 - **推断冒充事实**：描述里出现 chart 就写成"支持图表"，没有标注这是推断还是正文明确说明。
 
-`skill-discovery` 把这些都写成了硬约束：未执行的层必须显式声明，零命中必须如实报告，推断必须与事实分离。
+`find-skill` 把这些都写成了硬约束：未执行的层必须显式声明，零命中必须如实报告，推断必须与事实分离。
 
 ## 核心能力
 
@@ -48,7 +48,7 @@
 
 ## 与旧版 find-skills 的差异
 
-| 对比项 | 旧版 find-skills | skill-discovery |
+| 对比项 | 旧版 find-skills | find-skill |
 | --- | --- | --- |
 | 层数表述 | 描述写六层 | 描述与正文一致，正文给出六层完整端点 |
 | ClawHub | 描述提及但正文无章节、无端点 | 给出可用的检索路由，并标注易错的 404 路径 |
@@ -63,15 +63,15 @@
 
 ```bash
 git clone https://github.com/GodAI-Master/GodSkill.git
-cp -R GodSkill/skill-discovery ~/.workbuddy/skills/skill-discovery
+cp -R GodSkill/find-skill ~/.workbuddy/skills/find-skill
 ```
 
 Windows PowerShell：
 
 ```powershell
-$target = Join-Path $env:USERPROFILE ".workbuddy\skills\skill-discovery"
+$target = Join-Path $env:USERPROFILE ".workbuddy\skills\find-skill"
 New-Item -ItemType Directory -Path $target -Force | Out-Null
-Copy-Item ".\skill-discovery\*" $target -Recurse -Force
+Copy-Item ".\find-skill\*" $target -Recurse -Force
 ```
 
 请复制完整目录，不要只复制 `SKILL.md`，否则参考文件与脚本会丢失。
@@ -110,7 +110,7 @@ Copy-Item ".\skill-discovery\*" $target -Recurse -Force
 ## 文件结构
 
 ```text
-skill-discovery/
+find-skill/
 ├── SKILL.md                          # 主入口：硬约束、六层顺序、流程、边界
 ├── README.md
 ├── _skillhub_meta.json
@@ -127,7 +127,7 @@ skill-discovery/
 ## 本地扫描脚本
 
 ```bash
-python3 skill-discovery/scripts/scan_local_layers.py \
+python3 find-skill/scripts/scan_local_layers.py \
   --keywords excel xlsx chart 图表 \
   --top 10 --json scan.json
 ```
@@ -144,7 +144,7 @@ python3 skill-discovery/scripts/scan_local_layers.py \
 ## 设计与验证
 
 ```bash
-python3 no-repeat-skill/scripts/validate_skill.py skill-discovery --strict
+python3 no-repeat-skill/scripts/validate_skill.py find-skill --strict
 ```
 
 静态检查通过，只能证明结构、内部链接与 JSON 合法，不代表真实任务下的表现。

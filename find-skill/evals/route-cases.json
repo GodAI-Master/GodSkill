@@ -1,5 +1,5 @@
 {
-  "skill": "skill-discovery",
+  "skill": "find-skill",
   "version": "1.0.0",
   "notes": "路由用例只描述期望的触发行为，不代表已通过真实客户端验证。",
   "cases": [
