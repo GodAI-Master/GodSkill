@@ -2,6 +2,7 @@
   "name": "Find Skill",
   "version": "1.0.0",
   "description": "A six-layer auditable skill discovery and selection engine covering builtin, installed, SkillHub, Xiaping, ClawHub, and GitHub layers. Enforces explicit coverage reporting, three-level deduplication across federated marketplaces, four-dimension scoring with forced downgrade rules, evidence-separated capability claims, and recommend-only installation gating.",
+  "author": "GodAI-Master",
   "repository": "https://github.com/GodAI-Master/GodSkill",
   "tags": [
     "agent-skills",
